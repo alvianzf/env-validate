@@ -1,0 +1,19 @@
+{
+  "name": "env-validate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": {
+    "env-validate": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "validate": "node index.js"
+  },
+  "keywords": [],
+  "author": "alvianzf",
+  "license": "ISC",
+  "description": "Because forgetting .env variables is basically your hobby.",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
