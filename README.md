@@ -1,10 +1,10 @@
-# env-validate 🛠️💀  
+# env-validate-sarcastically 🛠️💀  
 ### Because forgetting .env variables is your full-time job.  
 
 ---
 
 ## **What is this?**  
-Oh, just another **life-saving** tool you never knew you needed—until your app blew up because you forgot to set `DATABASE_URL`. **env-validate** does one thing: **it checks if your `.env` file has all the required variables from `.env.example`** and screams at you if it doesn’t.  
+Oh, just another **life-saving** tool you never knew you needed—until your app blew up because you forgot to set `DATABASE_URL`. **env-validate-sarcastically** does one thing: **it checks if your `.env` file has all the required variables from `.env.example`** and screams at you if it doesn’t.  
 
 Yes, that's right. It **spoon-feeds** you the information your own brain refuses to retain.  
 
@@ -14,7 +14,7 @@ Yes, that's right. It **spoon-feeds** you the information your own brain refuses
 Because I *know* you're just gonna forget this too:  
 
 ```sh
-npm install env-validate
+npm install env-validate-sarcastically
 ```
 ---
 ## Usage
@@ -35,7 +35,7 @@ DATABASE_URL=your_database_url
 
 ### 3. 3. Run the script and get shamed:
 ```js
-const validateEnv = require("env-validate");
+const validateEnv = require("env-validate-sarcastically");
 validateEnv();
 ```
 
