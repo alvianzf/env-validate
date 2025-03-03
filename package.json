@@ -1,5 +1,5 @@
 {
-  "name": "env-validate",
+  "name": "env-validate-sarcastically",
   "version": "1.0.0",
   "main": "index.js",
   "bin": {
