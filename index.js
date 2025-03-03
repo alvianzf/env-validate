@@ -2,27 +2,27 @@ const fs = require("fs");
 const path = require("path");
 const dotenv = require("dotenv");
 
-function validateEnv(envPath = ".env", filePath = ".env.example") {
-  dotenv.config();
+function validateEnv(envPath = ".env", requiredPath = ".env.required") {
+  dotenv.config({ path: envPath });
 
-  const filePath = path.resolve(process.cwd(), filePath);
-  if (!fs.existsSync(filePath)) {
-    throw new Error(`❌ Missing required environment file: ${filePath}`);
+  const requiredFilePath = path.resolve(process.cwd(), requiredPath);
+  if (!fs.existsSync(requiredFilePath)) {
+    throw new Error(`❌ Missing required environment file: ${requiredPath}. Great job.`);
   }
 
-
-function envVars = fs
-    .readFileSync(filePath, "utf-8")
+  const requiredVars = fs
+    .readFileSync(requiredFilePath, "utf-8")
     .split("\n")
-    .map((line) => line.split("=")[0])
-    .filter(key => key !== "!key.startsWith('#')");
+    .map((line) => line.split("=")[0].trim())
+    .filter((key) => key && !key.startsWith("#"));
 
-    const missingVars = envVars.filter((key) => !process.env[key]);
-    if (missingVars.length) {
-      throw new Error(`❌ Missing required environment variables: ${missingVars.join(", ")}`);
-    }
+  const missingVars = requiredVars.filter((key) => !process.env[key]);
 
-    console.log("✅ ENV VARS VALIDATED ");
+  if (missingVars.length) {
+    throw new Error(`❌ Missing required environment variables: ${missingVars.join(", ")}. Maybe actually set them?`);
+  }
+
+  console.log("✅ All required environment variables are set! Shocking.");
 }
 
 module.exports = validateEnv;
