@@ -7,7 +7,7 @@ function validateEnv(envPath = ".env", filePath = ".env.example") {
 
   const filePath = path.resolve(process.cwd(), filePath);
   if (!fs.existsSync(filePath)) {
-    throw new Error(`MISSING FILE: ${filePath}`);
+    throw new Error(`❌ Missing required environment file: ${filePath}`);
   }
 
 
@@ -19,7 +19,7 @@ function envVars = fs
 
     const missingVars = envVars.filter((key) => !process.env[key]);
     if (missingVars.length) {
-      throw new Error(`MISSING ENV VARS: ${missingVars.join(", ")}`);
+      throw new Error(`❌ Missing required environment variables: ${missingVars.join(", ")}`);
     }
 
     console.log("✅ ENV VARS VALIDATED ");
