@@ -9,6 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "validate": "node index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alvianzf/env-validate"
+  },
   "keywords": [
     "env",
     "dotenv",
@@ -31,8 +35,12 @@
     "lazy-dev-fix"
   ],
   "author": "alvianzf",
-  "license": "ISC",
+  "license": "MIT",
   "description": "Because forgetting .env variables is basically your hobby.",
+  "bugs": {
+    "url": "https://github.com/alvianzf/env-validate/issues"
+  },
+  "homepage": "https://github.com/alvianzf/env-validate#readme",
   "dependencies": {
     "dotenv": "^8.2.0"
   }
